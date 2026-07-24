@@ -1,72 +1,173 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# MedLight
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+MedLight — это веб-приложение на базе Laravel, предназначенное для управления и обработки медицинских данных. Проект использует современные технологии для создания надежного и масштабируемого решения.
 
-## About Laravel
+## 📋 Описание проекта
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+MedLight предоставляет интегрированное решение для работы с медицинской информацией, включая управление данными пациентов, обработку результатов и ведение медицинск��х записей. Приложение разработано с использованием лучших практик веб-разработки и обеспечивает безопасность и надежность данных.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🏗️ Структура проекта
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```
+medlight/
+├── app/                      # Основной код приложения
+│   ├── Models/              # Модели базы данных (Eloquent ORM)
+│   ├── Http/                # HTTP контроллеры, middleware, запросы
+│   ├── Console/             # Консольные команды
+│   └── Services/            # Бизнес-логика приложения
+│
+├── bootstrap/               # Файлы инициализации приложения
+│
+├── config/                  # Конфигурационные файлы
+│   ├── database.php        # Настройки БД
+│   ├── cache.php           # Кеширование
+│   └── ...                 # Другие конфигурации
+│
+├── database/                # Работа с БД
+│   ├── migrations/         # Миграции схемы БД
+│   ├── seeds/              # Сидирование данных
+│   └── factories/           # Фабрики для тестирования
+│
+├── public/                  # Публично доступные файлы
+│   ├── css/                # Скомпилированные CSS стили
+│   ├── js/                 # Скомпилированный JavaScript
+│   └── index.php           # Входная точка приложения
+│
+├── resources/               # Исходные ресурсы
+│   ├── views/              # Blade шаблоны HTML
+│   ├── js/                 # JavaScript компоненты (Vue.js)
+│   ├── sass/               # SCSS стили
+│   └── lang/               # Языковые локализации
+│
+├── routes/                  # Определение маршрутов
+│   ├── web.php             # Веб-маршруты
+│   ├── api.php             # API маршруты
+│   └── console.php         # Консольные команды
+│
+├── storage/                 # Хранилище файлов
+│   ├── app/                # Сохраняемые данные приложения
+│   ├── logs/               # Логи приложения
+│   └── framework/          # Служебные файлы
+│
+├── tests/                   # Тесты приложения
+│   ├── Unit/               # Юнит-тесты
+│   ├── Feature/            # Функциональные тесты
+│   └── CreatesApplication.php
+│
+├── composer.json            # PHP зависимости
+├── package.json            # Node.js зависимости
+├── webpack.mix.js          # Конфигурация Laravel Mix
+├── artisan                 # Консольная утилита Laravel
+└── .env.example            # Пример переменных окружения
+```
 
-## Learning Laravel
+## 🛠️ Используемые технологии
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Backend
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Laravel 5.8** — Основной веб-фреймворк на PHP
+  - Eloquent ORM для работы с БД
+  - Миграции для управления схемой
+  - Middleware для обработки запросов
+  - Blade шаблонизатор
 
-## Laravel Sponsors
+- **PHP 7.1.3+** — Язык программирования
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- **Composer** — Менеджер PHP пакетов
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+**Основные пакеты:**
+- `laravel/framework: 5.8.*` — основной фреймворк
+- `laravel/tinker` — интерактивная консоль
+- `nesbot/carbon` — работа с датами и временем
+- `fideloper/proxy` — работа с прокси-серверами
 
-## Contributing
+### Frontend
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Vue.js 2.5** — Прогрессивный JavaScript фреймворк
+- **Bootstrap 4.1** — CSS фреймворк для адаптивного дизайна
+- **Sass/SCSS** — CSS препроцессор
+- **Webpack & Laravel Mix** — Сборка и обработка фронтенд ресурсов
+- **Axios** — HTTP клиент для запросов
+- **jQuery 3.2** — Утилиты для работы с DOM
+- **Popper.js** — Позиционирование всплывающих элементов
 
-## Security Vulnerabilities
+### Разработка и тестирование
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **PHPUnit 7.5** — Фреймворк для тестирования PHP кода
+- **Mockery** — Создание mock объектов
+- **Faker** — Генерация тестовых данных
+- **Laravel IDE Helper** — Автодополнение для IDE
+- **Whoops** — Обработка и вывод ошибок
+- **Collision** — Улучшенный вывод ошибок в консоли
 
-## License
+### Инструменты
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **StyleCI** — Автоматическая проверка стиля кода
+- **EditorConfig** — Унификация настроек редакторов
+
+## 🚀 Быстрый старт
+
+### Установка
+
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/gribbzle/medlight.git
+cd medlight
+```
+
+2. Установите PHP зависимости:
+```bash
+composer install
+```
+
+3. Установите Node.js зависимости:
+```bash
+npm install
+```
+
+4. Скопируйте файл окружения и создайте ключ приложения:
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+5. Настройте БД в файле `.env` и выполните миграции:
+```bash
+php artisan migrate
+```
+
+### Разработка
+
+**Компиляция фронтенд ресурсов:**
+```bash
+npm run dev      # Разработка
+npm run watch    # Отслеживание изменений
+npm run hot      # Hot reload
+npm run prod     # Продакшн
+```
+
+**Запуск приложения:**
+```bash
+php artisan serve
+```
+
+**Запуск тестов:**
+```bash
+php artisan test
+# или
+phpunit
+```
+
+## 📄 Лицензия
+
+The Laravel Framework распространяется под лицензией MIT. См. файл лицензии для подробностей.
+
+## 🤝 Справка
+
+Для получения информации об использовании и разработке см. [документацию Laravel](https://laravel.com/docs).
+
+---
+
+**Автор:** gribbzle  
+**Создано:** 04 июля 2019  
+**Последнее обновление:** 2021
